@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cans">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-controller="indexController">
+
+  <ul>
+    <li ng-repeat="artist in artists">
+      <span>{{artist.name}}</span>
+      <p>{{artist.snippet}}</p>
+    </li>
+  </ul>
+
+  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
