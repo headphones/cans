@@ -1,4 +1,4 @@
-var phonecatApp = angular.module('cans', []);
+var phonecatApp = angular.module('cans', ['ui.bootstrap']);
 
 phonecatApp.controller('indexController', function ($scope) {
   $scope.artists = [

@@ -21,7 +21,6 @@
   ],
   "directory": "app/lib/",
   "dependencies": {
-    "angular": "~1.4.4",
-    "bootstrap": "~3.3.5"
+    "angular-bootstrap": null
   }
 }

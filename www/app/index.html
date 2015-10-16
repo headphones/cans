@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <style type="text/css">
+    .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body ng-controller="indexController">
 
@@ -14,9 +17,8 @@
     </li>
   </ul>
 
-  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="/js/controllers.js"></script>
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
-  <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
