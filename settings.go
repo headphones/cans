@@ -1,35 +1,61 @@
 package main
-type settings struct {
+import (
+	"net/http"
+	"encoding/json"
+)
+
+type Settings struct {
 	// users configured
-	users map[*user]bool
+	Users map[string]User
 	// require client to log in
-	requireUser bool
+	RequireUser bool
 
 	// ===== source settings =====
 	// what.cd settings
-	whatCD	*whatCDSetings
+	WhatCD	*WhatCDSetings
 
 	// === downloader settings ===
 	// transmission settings
-	transmissionBT	*transmissionBTSettings
+	TransmissionBT	*TransmissionBTSettings
 
 	// === automation settings ===
 	// move files after download
-	moveAfterDownload	bool
+	MoveAfterDownload	bool
 	// use github.com/go-fsnotify/fsnotify
-	useNotify		bool
+	UseNotify		bool
 	// if not, how often to poll
-	pollInterval	int
+	PollInterval	int
 	// root of music library
-	moveRoot		string
-	// match files with 
+	MoveRoot		string
+	// match files with
 }
 
-type user struct {
-	name		string
-	password	string
+type User struct {
+	Password	string
 }
 
-type whatCDSetings struct {}
+type WhatCDSetings struct {}
 
-type transmissionBTSettings struct {}
+type TransmissionBTSettings struct {}
+
+func SettingsHandler(w http.ResponseWriter, r *http.Request) {
+	users := make(map[string]User)
+	users["Peter"] = User{
+		Password: "p@$$word",
+	}
+	settings := Settings{
+		Users:				users,
+		RequireUser: 		false,
+		WhatCD:				&WhatCDSetings{},
+		TransmissionBT:		&TransmissionBTSettings{},
+		MoveAfterDownload:	false,
+		UseNotify:			false,
+		PollInterval:		300,
+		MoveRoot:			"/tmp",
+	}
+	b, err := json.Marshal(settings)
+	if err != nil {
+		panic(err)
+	}
+    w.Write(b)
+}

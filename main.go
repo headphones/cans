@@ -1,5 +1,6 @@
 package main
 import (
+	"flag"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"log"
@@ -12,16 +13,28 @@ func PingHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	webroot := "/var/www"
+	bind := "localhost:8000"
+
+	flag.StringVar(&webroot, "webroot", "/var/www", "web application root")
+	flag.StringVar(&bind, "bind", "localhost:8000", "<host>:<port> or just <host> or <port>")
+	flag.Parse()
+
 	log.Println("")
 	log.Println("   `( ◔ ౪◔)´")
 	log.Println("")
 	log.Println(" Server running on :8000")
+
 	r := mux.NewRouter()
 	r.HandleFunc("/ping", PingHandler)
+	r.HandleFunc("/settings", SettingsHandler)
+
 	r.PathPrefix("/").Handler(
 		handlers.LoggingHandler(os.Stdout,
-			http.FileServer(
-				http.Dir("/var/www/"))))
+			http.FileServer(http.Dir(webroot))))
     //r.HandleFunc("/socket.io", SocketHandler)
-	http.ListenAndServe(":8000", r)
+	err := http.ListenAndServe(bind, r)
+	if err != nil {
+		panic(err)
+	}
 }
