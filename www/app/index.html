@@ -27,7 +27,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-left" data-example-id="input-group-segmented-buttons" action="" method="get">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-xs-12">
               <div class="input-group">
                 <div class="input-group-btn">
                   <select class="form-control" name="type">
@@ -45,6 +45,7 @@
             </div>
           </div>
         </form>
+
         <ul class="nav navbar-nav">
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -69,18 +70,10 @@
   </nav>
 
   <div class="container">
-    <div ng-repeat="artist in artists" ng-if="$index % 3 == 0" class="row">
-      <div class="col-xs-3">
-        <span>{{artists[$index].name}}</span>
-        <p>{{artists[$index].snippet}}</p>
-      </div>
-      <div class="col-xs-3">
-        <span>{{artists[$index+1].name}}</span>
-        <p>{{artists[$index+1].snippet}}</p>
-      </div>
-      <div class="col-xs-3">
-        <span>{{artists[$index+2].name}}</span>
-        <p>{{artists[$index+2].snippet}}</p>
+    <div class="row">
+      <div ng-repeat="artist in artists" class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+        <span>{{artist.name}}</span>
+        <p>{{artist.snippet | limitTo : 150}}{{artist.snippet.length > 150 ? '...' : ''}}</p>
       </div>
     </div>
     <div class="row">
