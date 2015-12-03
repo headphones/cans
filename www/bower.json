@@ -21,6 +21,9 @@
   ],
   "directory": "app/lib/",
   "dependencies": {
-    "angular-bootstrap": null
+    "angular-bootstrap": null,
+    "angular-material": "~0.11.4",
+    "bootstrap": "~3.3.6",
+    "material-design-icons": "~2.1.1"
   }
 }

@@ -1,3 +1,5 @@
+angular.module('demoapp', ['ngMdIcons']);
+
 var phonecatApp = angular.module('cans', ['ui.bootstrap']);
 
 phonecatApp.controller('indexController', function ($scope) {
