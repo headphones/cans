@@ -28,6 +28,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/ping", PingHandler)
 	r.HandleFunc("/settings", SettingsHandler)
+	r.HandleFunc("/test/lastfm", testArtistSearch)
 
 	r.PathPrefix("/").Handler(
 		handlers.LoggingHandler(os.Stdout,
