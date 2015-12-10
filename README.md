@@ -28,8 +28,9 @@ The long-term goals are to implement the full original feature set, and expand i
 
 To build cans yourself, you need to have [go](https://golang.org/) set up on your 
 machine. `go get github.com/headphones/cans` and `go run github.com/headphones/cans` 
-should get you up and running from there. If you'd like to run within a Docker container, 
-configurations are provided for you;
+should get you up and running from there. If you'd like to run within a Docker container,
+pre-built containers are available from [docker hub](https://hub.docker.com/r/headphones/cans),
+or you can build one yourself;
 
     docker run -Pit `./docker-container.sh | awk 'END {print $3}'`
 
