@@ -9,20 +9,20 @@ request, or just star the project to increase it's visibility. Thanks for taking
 
 The initial goals of this rewrite are (beyond a skeleton set of Headphones' features):
 
-  1) First and foremost: a faster, more responsive app
-  2) Lower resource usage and fewer external deps so we can support resource-constrained devices
-  3) Angular / Bootstrap UI so we can do more stuff client-side to make the app more 
-    responsive and work on a wider variety of devices and viewports.
-  4) Better search
-  5) Better data model that supports EPs, singles and other release types.
+1. First and foremost: a faster, more responsive app
+2. Lower resource usage and fewer external deps so we can support resource-constrained devices
+3. Angular / Bootstrap UI so we can do more stuff client-side to make the app more 
+  responsive and work on a wider variety of devices and viewports.
+4. Better search
+5. Better data model that supports EPs, singles and other release types.
 
 *NOTE: NBZ support is not currently a priority* 
 
 The long-term goals are to implement the full original feature set, and expand it with:
  
-  1) Online DRM-free music stores (Bandcamp, etc.)
-  2) Support multiple database backends (Musicbrainz, Discogs, ???)
-  3) ???
+1. Online DRM-free music stores (Bandcamp, etc.)
+2. Support multiple database backends (Musicbrainz, Discogs, ???)
+3. ???
 
 # Building
 
