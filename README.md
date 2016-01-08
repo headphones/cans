@@ -1,9 +1,11 @@
 # Cans [![Circle CI](https://circleci.com/gh/headphones/cans.svg?style=svg)](https://circleci.com/gh/headphones/cans)
 
-This is a complete rewrite of [Headphones](//github.com/rembo10/headphones/)
-in [golang](https://golang.org/). If you are interested in contributing, check out the
-[issue tracker](https://github.com/headphones/cans/issues) and file a bug, submit a pull 
-request, or just star the project to increase it's visibility. Thanks for taking a look!
+This is a complete rewrite of [rembo10/headphones](//github.com/rembo10/headphones/),
+a music library management server, originally written in Python. This time, the 
+language is [golang](https://golang.org/). If you are interested in contributing, 
+check out the [issue tracker](https://github.com/headphones/cans/issues) and file 
+a bug, submit a pull request, or just star the project to increase it's visibility. 
+Thanks for taking a look!
 
 # Objectives
 
