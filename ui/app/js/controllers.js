@@ -22,6 +22,9 @@ cansControllers.controller('ReleaseListCtrl', ['$scope', '$http',
     $scope.orderProp = 'name';
   }]);
 
-cansControllers.controller('SettingsCtrl', function ($scope) {
-  $scope.dashboard = {};
-});
+cansControllers.controller('SettingsCtrl', ['$scope', '$http',
+  function ($scope, $http) {
+    $http.get('/settings.json').success(function(data) {
+      $scope.settings = data;
+    });
+  }]);

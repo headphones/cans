@@ -1,5 +1,14 @@
 <div class="container">
   <div class="row">
     <h1>settings</h1>
+    <form name="settingsForm" class="my-form">
+      userType: <input name="input" ng-model="userType" required>
+      <span class="error" ng-show="settingsForm.input.$error.required">Required!</span><br>
+      <code>userType = {{userType}}</code><br>
+      <code>settingsForm.input.$valid = {{settingsForm.input.$valid}}</code><br>
+      <code>settingsForm.input.$error = {{settingsForm.input.$error}}</code><br>
+      <code>settingsForm.$valid = {{settingsForm.$valid}}</code><br>
+      <code>settingsForm.$error.required = {{!!settingsForm.$error.required}}</code><br>
+     </form>
   </div>
 </div>
