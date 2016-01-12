@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div ng-repeat="artist in artists" class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+      <span>{{artist.name}}</span>
+      <p>{{artist.description | limitTo : 150}}{{artist.description.length > 150 ? '...' : ''}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div ng-repeat="artist in artists">
+      <div class="row" ng-if="!(($index + 1) % 4)"></div>
+    </div>
+  </div>
+</div>

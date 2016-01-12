@@ -12,7 +12,7 @@
     .material-icons.md-20 { font-size: 20px; }
   </style>
 </head>
-<body ng-controller="indexController">
+<body ng-app="cans">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -50,8 +50,8 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#artists">Artists</a></li>
+          <li><a href="#releases">Releases</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -69,25 +69,17 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div ng-repeat="artist in artists" class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-        <span>{{artist.name}}</span>
-        <p>{{artist.snippet | limitTo : 150}}{{artist.snippet.length > 150 ? '...' : ''}}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div ng-repeat="artist in artists">
-        <div class="row" ng-if="!(($index + 1) % 4)"></div>
-      </div>
-    </div>
+  <div id="main">
+    <div ng-view></div>
   </div>
 
   <script src="/app/lib/jquery/dist/jquery.js"></script>
   <script src="/app/lib/angular/angular.js"></script>
+  <script src="/app/lib/angular-route/angular-route.js"></script>
   <script src="/app/lib/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="/app/lib/angular-material/angular-material.js"></script>
   <script src="/app/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/app/js/app.js"></script>
   <script src="/app/js/controllers.js"></script>
 </body>
 </html>
