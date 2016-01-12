@@ -1,11 +1,13 @@
 package main
 import (
 	"flag"
-	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
+	"fmt"
 )
 
 func PingHandler(w http.ResponseWriter, r *http.Request) {
@@ -20,10 +22,10 @@ func main() {
 	flag.StringVar(&bind, "bind", "localhost:8000", "<host>:<port> or just <host> or <port>")
 	flag.Parse()
 
+	log.Println("  .-------.")
+	log.Println(" [|( ◔ ౪◔)|] ")
 	log.Println("")
-	log.Println("   `( ◔ ౪◔)´")
-	log.Println("")
-	log.Println(" Server running on :8000")
+	log.Println(fmt.Sprintf("Bound to; %v", bind))
 
 	r := mux.NewRouter()
 	r.HandleFunc("/ping", PingHandler)
