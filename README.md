@@ -19,7 +19,7 @@ The initial goals of this rewrite are (beyond a skeleton set of Headphones' feat
 4. Better search
 5. Better data model that supports EPs, singles and other release types.
 
-*NOTE: NBZ support is not currently a priority* 
+*NOTE: Usenet support is not currently a priority* 
 
 The long-term goals are to implement the full original feature set, and expand it with:
  
